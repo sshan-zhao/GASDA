@@ -13,7 +13,9 @@ This is the PyTorch implementation for our CVPR'19 paper:
 
 ## Datasets
 [KITTI](http://www.cvlibs.net/datasets/kitti/raw_data.php)
+
 [vKITTI](https://europe.naverlabs.com/Research/Computer-Vision/Proxy-Virtual-Worlds/)
+
 Prepare the two datasets according to the datalists (*.txt in [datasets](https://github.com/sshan-zhao/GASDA/tree/master/datasets))
 
 ## Training (Tesla V100, 16GB)
