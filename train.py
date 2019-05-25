@@ -14,14 +14,10 @@ np.random.seed(0)
 
 if __name__ == '__main__':
     opt = TrainOptions().parse()
-    train_data_loader, val_data_loader = create_dataloader(opt)
+    train_data_loader = create_dataloader(opt)
     train_dataset_size = len(train_data_loader)   
     print('#training images = %d' % train_dataset_size)
     
-    if val_data_loader is not None:
-        val_dataset_size = len(val_data_loader)
-        print('#validation images = %d' % val_dataset_size)
-
     model = create_model(opt)
     model.setup(opt)
     save_results = SaveResults(opt)
@@ -43,7 +39,7 @@ if __name__ == '__main__':
             total_steps += opt.batchSize
             epoch_iter += opt.batchSize
             model.set_input(data)
-            model.optimize_parameters(epoch)
+            model.optimize_parameters()
             if total_steps % opt.print_freq == 0:
                 losses = model.get_current_losses()
                 t = (time.time() - iter_start_time) / opt.batchSize

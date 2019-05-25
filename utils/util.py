@@ -105,12 +105,6 @@ class SaveResults:
         with open(self.log_name, "a") as log_file:
             log_file.write('%s\n' % message)
 
-    def print_validation_errors(self, abs_rel, sq_rel, rmse, rmse_log, a1, a2, a3, domain):
-        message = '(%s abs_rel: %.3f, sq_rel: %.3f, rmse: %.3f, rmse_log: %.3f, a1: %.3f, a2: %.3f, a3: %.3f)' % (domain, abs_rel, sq_rel, rmse, rmse_log, a1, a2, a3)
-        print(message)
-        with open(self.log_name, 'a') as log_file:
-            log_file.write('%s\n' % message)
-
 def mkdirs(paths):
     if isinstance(paths, list) and not isinstance(paths, str):
         for path in paths:

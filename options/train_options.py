@@ -6,8 +6,6 @@ class TrainOptions(BaseOptions):
         parser = BaseOptions.initialize(self, parser)
         parser.add_argument('--src_train_datafile', type=str, default='train.txt', help='stores data list, in src_root')
         parser.add_argument('--tgt_train_datafile', type=str, default='train.txt', help='stores data list, in tgt_root')
-        parser.add_argument('--src_val_datafile', type=str, default='val.txt', help='stores data list, in src_root')
-        parser.add_argument('--tgt_val_datafile', type=str, default='val.txt', help='stores data list, in tgt_root')
         parser.add_argument('--print_freq', type=int, default=32, help='frequency of showing training results on console')
         parser.add_argument('--save_result_freq', type=int, default=3200, help='frequency of saving the latest prediction results')
         parser.add_argument('--save_latest_freq', type=int, default=3200, help='frequency of saving the latest trained model')
@@ -23,7 +21,7 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--no_lsgan', action='store_true', help='do *not* use least square GAN, if false, use vanilla GAN')
         parser.add_argument('--scale_pred', action='store_true', help='scale prediction according the ratio of median value')
         parser.add_argument('--pool_size', type=int, default=50, help='the size of image buffer that stores previously generated images')
-        parser.add_argument('--lr_policy', type=str, default='lambda', help='learning rate policy: lambda|step|plateau')
+        parser.add_argument('--lr_policy', type=str, default='step', help='learning rate policy: lambda|step|plateau')
         parser.add_argument('--lr_decay_iters', type=int, default=10, help='multiply by a gamma every lr_decay_iters iterations')
         parser.add_argument('--no_val', action='store_true', help='validation')
 

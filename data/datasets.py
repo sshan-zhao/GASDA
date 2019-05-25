@@ -8,7 +8,6 @@ import torch
 from PIL import Image
 from PIL import ImageOps
 from torch.utils import data
-#from utils.dataset_util import SYNTHIA, KITTI
 from utils.dataset_util import KITTI
 import random
 import cv2
@@ -182,8 +181,6 @@ class KittiDataset(data.Dataset):
             data['right_img'] = r_img
         if fb is not None:
             data['fb'] = fb
-        if depth is not None and self.phase == 'val' :
-            data['depth'] = depth
 
         return {'tgt': data}
 

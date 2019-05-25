@@ -21,6 +21,13 @@ def freeze_bn(m):
         m.weight.requires_grad = False
         m.bias.requires_grad = False
 
+def freeze_in(m):
+    classname = m.__class__.__name__
+    if classname.find('InstanceNorm') != -1:
+        m.eval()
+        #m.weight.requires_grad = False
+        #m.bias.requires_grad = False
+
 def unfreeze_bn(m):
     classname = m.__class__.__name__
     if classname.find('BatchNorm') != -1:
@@ -62,7 +69,7 @@ def get_scheduler(optimizer, opt):
             return lr_l
         scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda_rule)
     elif opt.lr_policy == 'step':
-        scheduler = lr_scheduler.StepLR(optimizer, step_size=opt.lr_decay_iters, gamma=0.1)
+        scheduler = lr_scheduler.StepLR(optimizer, step_size=opt.lr_decay_iters, gamma=0.5)
     elif opt.lr_policy == 'plateau':
         scheduler = lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.2, threshold=0.01, patience=5)
     else:
