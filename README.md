@@ -3,7 +3,7 @@ This is the PyTorch implementation for our CVPR'19 paper:
 
 **S. Zhao, H. Fu, M. Gong and D. Tao. Geometry-Aware Symmetric Domain Adaptation for Monocular Depth Estimation. [PAPER](https://sshan-zhao.github.io/papers/gasda.pdf)**
 
-![Framework](https://github.com/sshan-zhao/GASDA/tree/master/img/framework.png)
+![Framework](https://github.com/sshan-zhao/GASDA/blob/master/img/framework.png)
 
 ## Environment
 1. Python 3.6
