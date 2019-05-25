@@ -1,7 +1,9 @@
 # GASDA
 This is the PyTorch implementation for our CVPR'19 paper:
+
 **S. Zhao, H. Fu, M. Gong and D. Tao. Geometry-Aware Symmetric Domain Adaptation for Monocular Depth Estimation. [PAPER](https://sshan-zhao.github.io/papers/gasda.pdf)**
-![Framework](https://github.com/sshan-zhao/GASDA/img/framework.png)
+
+![Framework](https://github.com/sshan-zhao/GASDA/tree/master/img/framework.png)
 
 ## Environment
 1. Python 3.6
@@ -12,7 +14,7 @@ This is the PyTorch implementation for our CVPR'19 paper:
 ## Datasets
 [KITTI](http://www.cvlibs.net/datasets/kitti/raw_data.php)
 [vKITTI](https://europe.naverlabs.com/Research/Computer-Vision/Proxy-Virtual-Worlds/)
-Prepare the two datasets according to the datalists (*.txt in [datasets](https://github.com/sshan-zhao/GASDA/datasets))
+Prepare the two datasets according to the datalists (*.txt in [datasets](https://github.com/sshan-zhao/GASDA/tree/master/datasets))
 
 ## Training (Tesla V100, 16GB)
 - Train [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) using the official experimental settings, or download our [pretrained models](https://1drv.ms/f/s!Aq9eyj7afTjMcZorokRKW4ATgZ8).
@@ -45,7 +47,7 @@ If you use this code for your research, please cite our papers.
   booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2019}
 }
-
+```
 ## Acknowledgments
 Code is inspired by [T^2Net](https://github.com/lyndonzheng/Synthetic2Realistic) and [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
 
