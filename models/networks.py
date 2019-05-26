@@ -52,8 +52,6 @@ def get_norm_layer(norm_type='instance'):
         norm_layer = functools.partial(nn.BatchNorm2d, affine=True)
     elif norm_type == 'instance':
         norm_layer = functools.partial(nn.InstanceNorm2d, affine=False, track_running_stats=True)
-    elif norm_type == 'synbatch':
-        norm_layer = functools.partial(SynchronizedBatchNorm2d, affine=True)
     elif norm_type == 'none':
         norm_layer = None
     else:
