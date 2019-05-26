@@ -8,7 +8,6 @@ from torchvision import models
 import numpy as np
 from torch.autograd import Function
 from utils.bilinear_sampler import *
-from sync_batchnorm import SynchronizedBatchNorm2d, DataParallelWithCallback
 
 ###############################################################################
 # Helper Functions
