@@ -33,7 +33,7 @@ python train.py --model fs --gpu_ids 0 --batchSize 8 --loadSize 256 1024 --g_src
 
 - Train GASDA using the pretrained F_s, F_t and CycleGAN.
 ```
-python train.py --freeze_bn --freeze_in --model gasda2 --gpu_ids 0 --batchSize 3 --loadSize 192 640 --g_src_premodel ./cyclegan/G_Src.pth --g_tgt_premodel ./cyclegan/G_Tgt.pth --d_src_premodel ./cyclegan/D_Src.pth --d_tgt_premodel ./cyclegan/D_Tgt.pth --t_depth_premodel ./checkpoints/vkitti2kitti_ft_bn/**_net_G_Depth_T.pth --s_depth_premodel ./checkpoints/vkitti2kitti_fs_bn/**_net_G_Depth_S.pth 
+python train.py --freeze_bn --freeze_in --model gasda --gpu_ids 0 --batchSize 3 --loadSize 192 640 --g_src_premodel ./cyclegan/G_Src.pth --g_tgt_premodel ./cyclegan/G_Tgt.pth --d_src_premodel ./cyclegan/D_Src.pth --d_tgt_premodel ./cyclegan/D_Tgt.pth --t_depth_premodel ./checkpoints/vkitti2kitti_ft_bn/**_net_G_Depth_T.pth --s_depth_premodel ./checkpoints/vkitti2kitti_fs_bn/**_net_G_Depth_S.pth 
 ```
 Note: this training strategy is different from that in our paper.
 
