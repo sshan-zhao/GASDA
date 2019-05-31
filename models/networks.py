@@ -9,10 +9,6 @@ import numpy as np
 from torch.autograd import Function
 from utils.bilinear_sampler import *
 
-###############################################################################
-# Helper Functions
-###############################################################################
-
 def freeze_bn(m):
     classname = m.__class__.__name__
     if classname.find('BatchNorm') != -1:
