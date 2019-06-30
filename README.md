@@ -38,7 +38,7 @@ python train.py --freeze_bn --freeze_in --model gasda --gpu_ids 0 --batchSize 3 
 Note: this training strategy is different from that in our paper.
 
 ## Test
-MODEL COMING SOON.
+[MODELS](https://1drv.ms/u/s!Aq9eyj7afTjMcgsHJWMvya7BCbg?e=kBtnDs).
 
 ## Citation
 If you use this code for your research, please cite our papers.
