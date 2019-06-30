@@ -1,7 +1,7 @@
 # GASDA
 This is the PyTorch implementation for our CVPR'19 paper:
 
-**S. Zhao, H. Fu, M. Gong and D. Tao. Geometry-Aware Symmetric Domain Adaptation for Monocular Depth Estimation. [PAPER](https://sshan-zhao.github.io/papers/gasda.pdf)**
+**S. Zhao, H. Fu, M. Gong and D. Tao. Geometry-Aware Symmetric Domain Adaptation for Monocular Depth Estimation. [PAPER](https://sshan-zhao.github.io/papers/gasda.pdf) [POSTER](https://sshan-zhao.github.io/papers/gasda_poster.pdf)**
 
 ![Framework](https://github.com/sshan-zhao/GASDA/blob/master/img/framework.png)
 
@@ -41,12 +41,13 @@ Note: this training strategy is different from that in our paper.
 [MODELS](https://1drv.ms/u/s!Aq9eyj7afTjMcgsHJWMvya7BCbg?e=kBtnDs).
 
 ## Citation
-If you use this code for your research, please cite our papers.
+If you use this code for your research, please cite our paper.
 ```
-@inproceedings{ZHAOCVPR19-GASDA,
+@inproceedings{zhao2019geometry,
   title={Geometry-Aware Symmetric Domain Adaptation for Monocular Depth Estimation},
   author={Zhao, Shanshan and Fu, Huan and Gong, Mingming and Tao, Dacheng},
-  booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={9788--9798},
   year={2019}
 }
 ```
