@@ -18,6 +18,19 @@ This is the PyTorch implementation for our CVPR'19 paper:
 
 Prepare the two datasets according to the datalists (*.txt in [datasets](https://github.com/sshan-zhao/GASDA/tree/master/datasets))
 
+datasets
+  |----kitti
+         |----2011_09_26
+         |----2011_09_28
+         |----.........
+  |----vkitti
+         |----rgb
+               |----0006
+               |-----.......
+         |----depth
+               |----0006
+               |----.......
+
 ## Training (Tesla V100, 16GB)
 - Train [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) using the official experimental settings, or download our [pretrained models](https://1drv.ms/f/s!Aq9eyj7afTjMcZorokRKW4ATgZ8).
 
