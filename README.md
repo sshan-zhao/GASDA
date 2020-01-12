@@ -52,7 +52,7 @@ python train.py --freeze_bn --freeze_in --model gasda --gpu_ids 0 --batchSize 3 
 Note: this training strategy is different from that in our paper.
 
 ## Test
-[MODELS](https://1drv.ms/u/s!Aq9eyj7afTjMcgsHJWMvya7BCbg?e=kBtnDs).
+[MODELS](https://drive.google.com/open?id=1CvuGUTObRhpZpSTYxy-BIRhft6ttMJOP).
 
 Copy the provided models to GASDA/checkpoints/vkitti2kitti_gasda/, and rename the models 1_* (e.g., 1_net_D_Src.pth), and then
 ```
