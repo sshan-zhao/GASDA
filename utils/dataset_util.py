@@ -135,8 +135,8 @@ class KITTI:
 
         # check if in bounds
         # use minus 1 to get the exact same value as KITTI matlab code
-        velo_pts_im[:, 0] = np.round(velo_pts_im[:,0]) － 1
-        velo_pts_im[:, 1] = np.round(velo_pts_im[:,1]) 
+        velo_pts_im[:, 0] = np.round(velo_pts_im[:,0]) - 1
+        velo_pts_im[:, 1] = np.round(velo_pts_im[:,1]) - 1
         val_inds = (velo_pts_im[:, 0] >= 0) & (velo_pts_im[:, 1] >= 0)
         val_inds = val_inds & (velo_pts_im[:,0] < im_shape[1]) & (velo_pts_im[:,1] < im_shape[0])
         velo_pts_im = velo_pts_im[val_inds, :]
