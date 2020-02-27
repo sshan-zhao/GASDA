@@ -102,7 +102,6 @@ def init_net(net, init_type='normal', gpu_ids=[]):
     init_weights(net, init_type)
     return net
 
-
 def gradient_x(img):
     gx = img[:,:,:-1,:] - img[:,:,1:,:]
     return gx
@@ -117,47 +116,6 @@ def get_grid(x):
     grid = torch.cat([torchHorizontal, torchVertical], 1)
 
     return grid
-
-def define_G(which_model_netG='RESNET', use_dropout=False, up_size=[],
-             init_type='normal', init_gain=0.02, gpu_ids=[], nblocks=9, stage='feat', out='depth'):
-    netG = None
-
-    if which_model_netG.upper() == 'RESNET':
-        if stage == 'feat':
-            netG = ResNetFeatGenerator()
-            netG = init_net(netG, gpu_ids=gpu_ids, need_init=False)
-        elif stage == 'depth':
-            netG = ResNetDepthGenerator(use_dropout=use_dropout, init_type=init_type, init_gain=init_gain, up_size=up_size, act='tanh')
-            netG = init_net(netG, init_type=init_type, init_gain=init_gain, gpu_ids=gpu_ids)
-        elif stage == 'disp':
-            netG = ResNetDepthGenerator(use_dropout=use_dropout, init_type=init_type, init_gain=init_gain, up_size=up_size, act='sigmoid')
-            netG = init_net(netG, init_type=init_type, init_gain=init_gain, gpu_ids=gpu_ids)
-        elif stage == 'cyclegan':
-            netG = ResnetGenerator(3, 3, 64, get_norm_layer('instance'), use_dropout=use_dropout, n_blocks=nblocks)
-            netG = init_net(netG, init_type, init_gain, gpu_ids)
-    elif which_model_netG.upper() == 'UNET':
-        net = UNetGenerator(3, 1, 64, 4, 'batch', 'PReLU', 0, False, gpu_ids, 0.1, out)
-        netG = init_net(net, init_type, init_gain, gpu_ids)
-    else:
-        raise NotImplementedError('Generator model name [%s] is not recognized' % which_model_netG)
-    return netG
-
-
-def define_D(input_nc, ndf, which_model_netD,
-             n_layers_D=3, norm='batch', use_sigmoid=False, init_type='normal', init_gain=0.02, gpu_ids=[]):
-    netD = None
-    norm_layer = get_norm_layer(norm_type=norm)
-
-    if which_model_netD == 'basic':
-        netD = NLayerDiscriminator(input_nc, ndf, n_layers=3, norm_layer=norm_layer, use_sigmoid=use_sigmoid)
-    elif which_model_netD == 'n_layers':
-        netD = NLayerDiscriminator(input_nc, ndf, n_layers_D, norm_layer=norm_layer, use_sigmoid=use_sigmoid)
-    elif which_model_netD == 'pixel':
-        netD = PixelDiscriminator(input_nc, ndf, norm_layer=norm_layer, use_sigmoid=use_sigmoid)
-    else:
-        raise NotImplementedError('Discriminator model name [%s] is not recognized' %
-                                  which_model_netD)
-    return init_net(netD, init_type, init_gain, gpu_ids)
 
 def ssim(x, y):
 
